@@ -41,5 +41,10 @@ public class Tabuleiro {
 	public String toString() {
 		return "Tabuleiro [linhas=" + linhas + ", colunas=" + colunas + ", pecas=\n" + Arrays.toString(pecas) + "]";
 	}
+	
+	public void colocarPeca(Peca peca, Posicao posicao) {
+		pecas[posicao.getLinha()][posicao.getColuna()] = peca;
+		peca.posicao = posicao;
+	}
 
 }
