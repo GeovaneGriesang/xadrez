@@ -2,6 +2,7 @@ package aplicacao;
 
 import tabuleiro.Posicao;
 import tabuleiro.Tabuleiro;
+import xadrez.PartidaDeXadrez;
 
 public class Principal {
 
@@ -12,6 +13,11 @@ public class Principal {
 		
 		Tabuleiro tabuleiro = new Tabuleiro(8, 8);
 		System.out.println("\n"+tabuleiro);
+		
+		System.out.println();
+		PartidaDeXadrez partida = new PartidaDeXadrez();
+		Interface.imprimirTabuleiro(partida.getPecas());
+		
 
 	}
 
