@@ -44,6 +44,9 @@ public class PartidaDeXadrez {
 		if (!tabuleiro.existePosicao(posicao)) {
 			throw new ExcecoesDoXadrez("Essa não é uma posição de origem!");
 		}
+		if (!tabuleiro.TemPecaNaPosicao(posicao)) {
+			throw new ExcecoesDoXadrez("Não existe peça na posição de origem!");
+		}
 		
 	}
 	
