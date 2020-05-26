@@ -41,11 +41,14 @@ public class PartidaDeXadrez {
 	}
 	
 	private void validarPosicaoOrigem(Posicao posicao) {
-		if (!tabuleiro.existePosicao(posicao)) {
+		/*if (!tabuleiro.existePosicao(posicao)) {
 			throw new ExcecoesDoXadrez("Essa não é uma posição de origem!");
-		}
+		}*/
 		if (!tabuleiro.TemPecaNaPosicao(posicao)) {
 			throw new ExcecoesDoXadrez("Não existe peça na posição de origem!");
+		}
+		if (!tabuleiro.peca(posicao).existePeloMenosUmMovimentoPossivel()){
+			throw new ExcecoesDoXadrez("Não existem movimentos possível para essa peça!");
 		}
 		
 	}

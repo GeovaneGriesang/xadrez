@@ -20,6 +20,7 @@ public class Principal {
 		 * System.out.println("\n"+tabuleiro);
 		 */
 
+		//Locale.
 		System.out.println();
 		PartidaDeXadrez partida = new PartidaDeXadrez();
 

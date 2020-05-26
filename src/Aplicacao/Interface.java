@@ -43,7 +43,7 @@ public class Interface {
 			int linha = Integer.parseInt(s.substring(1));
 			return new PosicaoNoXadrez(coluna, linha);
 		} catch (RuntimeException e) {
-			throw new InputMismatchException("Erro ao ler a posição do xadrez: os valores válidos são de a2 até h8.");
+			throw new InputMismatchException("Erro ao ler a posição do xadrez: os valores válidos são de a1 até h8.");
 		}
 
 	}
