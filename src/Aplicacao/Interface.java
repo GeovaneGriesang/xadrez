@@ -52,16 +52,30 @@ public class Interface {
 		for (int i = 0; i < pecas.length; i++) {
 			System.out.print((pecas.length - i) + " ");
 			for (int j = 0; j < pecas.length; j++) {
-				imprimirPeca(pecas[i][j]);
+				imprimirPeca(pecas[i][j], false);
 			}
 			System.out.println("");
 		}
 		System.out.println("  a b c d e f g h");
 	};
 
-	public static void imprimirPeca(PecaDeXadrez peca) {
+	public static void imprimirTabuleiro(PecaDeXadrez[][] pecas, boolean[][] movimentacoesPossiveis) {
+		for (int i = 0; i < pecas.length; i++) {
+			System.out.print((pecas.length - i) + " ");
+			for (int j = 0; j < pecas.length; j++) {
+				imprimirPeca(pecas[i][j], movimentacoesPossiveis[i][j]);
+			}
+			System.out.println("");
+		}
+		System.out.println("  a b c d e f g h");
+	};
+
+	public static void imprimirPeca(PecaDeXadrez peca, boolean fundo) {
+		if (fundo) {
+			System.out.print(ANSI_BLUE_BACKGROUND);
+		}
 		if (peca == null) {
-			System.out.print("-");
+			System.out.print("-" + ANSI_RESET);
 		} else {
 			if (peca.getCor() == Cor.BRANCO) {
 				System.out.print(ANSI_GREEN + peca + ANSI_RESET);

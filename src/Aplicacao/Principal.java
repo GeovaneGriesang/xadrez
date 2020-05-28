@@ -35,6 +35,10 @@ public class Principal {
 				System.out.print("Origem: ");
 				PosicaoNoXadrez origem = Interface.lerPosicaoNoXadrez(sc);
 
+				boolean [][] movimentacoesPossiveis = partida.movimentosPossiveis(origem);
+				Interface.LimparTela();
+				Interface.imprimirTabuleiro(partida.getPecas(), movimentacoesPossiveis);
+				
 				System.out.println();
 				System.out.print("Destino: ");
 				PosicaoNoXadrez destino = Interface.lerPosicaoNoXadrez(sc);
