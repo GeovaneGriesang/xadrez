@@ -29,7 +29,7 @@ public class Principal {
 		while (true) {
 			try {
 				Interface.LimparTela();
-				Interface.imprimirTabuleiro(partida.getPecas());
+				Interface.imprimirPartida(partida);
 
 				System.out.println();
 				System.out.print("Origem: ");

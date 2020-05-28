@@ -64,7 +64,7 @@ public class Rei extends PecaDeXadrez {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
 		// sudeste (baixo + direita)
-		p.setValue(posicao.getLinha() + 1, posicao.getColuna() + 1);
+		p.setValue(posicao.getLinha() + 1, posicao	.getColuna() + 1);
 		if (getTabuleiro().existePosicao(p) && podeMover(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
