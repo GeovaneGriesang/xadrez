@@ -97,6 +97,10 @@ public class Interface {
 		System.out.println();
 		System.out.println("Turno: "+partidaDeXadrez.getTurno() );
 		System.out.println("Aguardando jogador: "+partidaDeXadrez.getJogadorAtual());
+		
+		if(partidaDeXadrez.getCheck()) {
+			System.out.println("CHECK!");
+		}
 	}
 	
 	public static void imprimirPecasCapturadas(List<PecaDeXadrez> capturadas) {
