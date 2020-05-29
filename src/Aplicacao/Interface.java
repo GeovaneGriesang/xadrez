@@ -89,35 +89,45 @@ public class Interface {
 		}
 		System.out.print(" ");
 	};
-	
+
 	public static void imprimirPartida(PartidaDeXadrez partidaDeXadrez, List<PecaDeXadrez> capturadas) {
 		imprimirTabuleiro(partidaDeXadrez.getPecas());
 		System.out.println("");
 		imprimirPecasCapturadas(capturadas);
 		System.out.println();
-		System.out.println("Turno: "+partidaDeXadrez.getTurno() );
-		System.out.println("Aguardando jogador: "+partidaDeXadrez.getJogadorAtual());
-		
-		if(partidaDeXadrez.getCheck()) {
-			System.out.println("CHECK!");
+		System.out.println("Turno: " + partidaDeXadrez.getTurno());
+		if (partidaDeXadrez.getCheckMate()) {
+			System.out.println("");
+			System.out.println("*** CHECKMATE ***");
+			System.out.println("");
+			System.out.println("Vencedor: "+partidaDeXadrez.getJogadorAtual());
+		} else {
+			System.out.println("Aguardando jogador: " + partidaDeXadrez.getJogadorAtual());
+
+			if (partidaDeXadrez.getCheck()) {
+				System.out.println("");
+				System.out.println("CHECK!");
+			}
 		}
 	}
-	
+
 	public static void imprimirPecasCapturadas(List<PecaDeXadrez> capturadas) {
-		List<PecaDeXadrez> brancas = capturadas.stream().filter(x -> x.getCor() == Cor.BRANCO).collect(Collectors.toList());
-		List<PecaDeXadrez> pretas = capturadas.stream().filter(x -> x.getCor() == Cor.PRETO).collect(Collectors.toList());
+		List<PecaDeXadrez> brancas = capturadas.stream().filter(x -> x.getCor() == Cor.BRANCO)
+				.collect(Collectors.toList());
+		List<PecaDeXadrez> pretas = capturadas.stream().filter(x -> x.getCor() == Cor.PRETO)
+				.collect(Collectors.toList());
 		System.out.println("Peças capturadas: ");
-		
+
 		System.out.print("Brancas: ");
 		System.out.print(ANSI_GREEN);
 		System.out.println(Arrays.toString(brancas.toArray()));
 		System.out.print(ANSI_RESET);
-		
+
 		System.out.print("Pretas.: ");
 		System.out.print(ANSI_YELLOW);
 		System.out.println(Arrays.toString(pretas.toArray()));
 		System.out.print(ANSI_RESET);
-		
+
 	}
 
 }

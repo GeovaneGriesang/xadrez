@@ -29,7 +29,7 @@ public class Principal {
 		
 		Scanner sc = new Scanner(System.in);
 
-		while (true) {
+		while (!partida.getCheckMate()) {
 			try {
 				Interface.LimparTela();
 				Interface.imprimirPartida(partida, capturadas);
@@ -61,6 +61,8 @@ public class Principal {
 				sc.nextLine();
 			}
 		}
+		Interface.LimparTela();
+		Interface.imprimirPartida(partida, capturadas);
 	}
 
 }
