@@ -22,11 +22,11 @@ public class PosicaoNoXadrez {
 	public int getLinha() {
 		return linha;
 	}
-	
+
 	protected Posicao toPosicao() {
 		return new Posicao(8 - linha, coluna - 'a');
 	}
-	
+
 	protected static PosicaoNoXadrez fromPosicao(Posicao posicao) {
 		return new PosicaoNoXadrez((char) ('a' + posicao.getColuna()), 8 - posicao.getLinha());
 	}

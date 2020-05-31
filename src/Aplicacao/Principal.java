@@ -22,11 +22,11 @@ public class Principal {
 		 * System.out.println("\n"+tabuleiro);
 		 */
 
-		//Locale.
+		// Locale.
 		System.out.println();
 		PartidaDeXadrez partida = new PartidaDeXadrez();
 		List<PecaDeXadrez> capturadas = new ArrayList<>();
-		
+
 		Scanner sc = new Scanner(System.in);
 
 		while (!partida.getCheckMate()) {
@@ -38,10 +38,10 @@ public class Principal {
 				System.out.print("Origem: ");
 				PosicaoNoXadrez origem = Interface.lerPosicaoNoXadrez(sc);
 
-				boolean [][] movimentacoesPossiveis = partida.movimentosPossiveis(origem);
+				boolean[][] movimentacoesPossiveis = partida.movimentosPossiveis(origem);
 				Interface.LimparTela();
 				Interface.imprimirTabuleiro(partida.getPecas(), movimentacoesPossiveis);
-				
+
 				System.out.println();
 				System.out.print("Destino: ");
 				PosicaoNoXadrez destino = Interface.lerPosicaoNoXadrez(sc);
@@ -49,13 +49,20 @@ public class Principal {
 				PecaDeXadrez pecaCapturada = partida.MoverPeca(origem, destino);
 				if (pecaCapturada != null) {
 					capturadas.add(pecaCapturada);
-				
-				if (partida.getPromocao() != null) {
-					System.out.println("Informe para qual peça o peão deve ser promovido (T/C/B/D): ");
-					String tipo = sc.nextLine();
-					partida.substituirPecaPromovida(tipo);
-				}
-				
+
+					if (partida.getPromocao() != null) {
+						System.out.print("Informe para qual peça o peão deve ser promovido (T/C/B/D): ");
+						String tipo = sc.nextLine().toUpperCase();
+
+						while (!tipo.equals("D") && !tipo.equals("B") && !tipo.equals("C") && !tipo.equals("T")) {
+							System.out.println("");
+							System.out.print("Peça escolhida é inválida! Digite novamente (T/C/B/D): ");
+							tipo = sc.nextLine().toUpperCase();
+						}
+
+						partida.substituirPecaPromovida(tipo);
+					}
+
 				}
 			} catch (ExcecoesDoXadrez e) {
 				System.out.println(e.getMessage());

@@ -16,13 +16,13 @@ public class Cavalo extends PecaDeXadrez {
 		PecaDeXadrez p = (PecaDeXadrez) getTabuleiro().peca(posicao);
 		return (p == null) || (p.getCor() != getCor());
 	}
-	
+
 	@Override
 	public boolean[][] movimentacoesPossiveis() {
 		boolean[][] mat = new boolean[getTabuleiro().getLinhas()][getTabuleiro().getColunas()];
 
 		Posicao p = new Posicao(0, 0);
-		
+
 		// 2 cima + esquerda
 		p.setValue(posicao.getLinha() - 2, posicao.getColuna() - 1);
 		if (getTabuleiro().existePosicao(p) && podeMover(p)) {
@@ -59,11 +59,11 @@ public class Cavalo extends PecaDeXadrez {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
 		// 2 direita + baixo
-		p.setValue(posicao.getLinha() + 1, posicao	.getColuna() + 2);
+		p.setValue(posicao.getLinha() + 1, posicao.getColuna() + 2);
 		if (getTabuleiro().existePosicao(p) && podeMover(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
-		
+
 		return mat;
 	}
 
@@ -71,7 +71,5 @@ public class Cavalo extends PecaDeXadrez {
 	public String toString() {
 		return "C";
 	}
-	
-	
 
 }

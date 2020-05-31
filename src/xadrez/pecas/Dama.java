@@ -6,8 +6,7 @@ import xadrez.Cor;
 import xadrez.PecaDeXadrez;
 
 public class Dama extends PecaDeXadrez {
-	
-	
+
 	public Dama(Tabuleiro tabuleiro, Cor cor) {
 		super(tabuleiro, cor);
 		// TODO Auto-generated constructor stub
@@ -63,7 +62,7 @@ public class Dama extends PecaDeXadrez {
 		if (getTabuleiro().existePosicao(p) && TemPecaOponente(p)) {
 			mat[p.getLinha()][p.getColuna()] = true;
 		}
-		
+
 		// acima + esquerda
 		p.setValue(posicao.getLinha() - 1, posicao.getColuna() - 1);
 		while (getTabuleiro().existePosicao(p) && !getTabuleiro().TemPecaNaPosicao(p)) {

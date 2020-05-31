@@ -87,7 +87,7 @@ public class Peao extends PecaDeXadrez {
 			if (getTabuleiro().existePosicao(p) && TemPecaOponente(p)) {
 				mat[p.getLinha()][p.getColuna()] = true;
 			}
-			
+
 			// enPassant
 			if (posicao.getLinha() == 4) {
 				Posicao esquerda = new Posicao(posicao.getLinha(), posicao.getColuna() - 1);
@@ -103,7 +103,7 @@ public class Peao extends PecaDeXadrez {
 				}
 
 			}
-			
+
 		}
 
 		return mat;

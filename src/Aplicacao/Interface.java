@@ -100,7 +100,7 @@ public class Interface {
 			System.out.println("");
 			System.out.println("*** CHECKMATE ***");
 			System.out.println("");
-			System.out.println("Vencedor: "+partidaDeXadrez.getJogadorAtual());
+			System.out.println("Vencedor: " + partidaDeXadrez.getJogadorAtual());
 		} else {
 			System.out.println("Aguardando jogador: " + partidaDeXadrez.getJogadorAtual());
 

@@ -30,11 +30,10 @@ public class Posicao {
 	public String toString() {
 		return "Posicao [linha=" + linha + ", coluna=" + coluna + "]";
 	}
-	
+
 	public void setValue(int linha, int coluna) {
 		this.linha = linha;
 		this.coluna = coluna;
 	}
-	
-	
+
 }
