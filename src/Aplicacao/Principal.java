@@ -49,6 +49,13 @@ public class Principal {
 				PecaDeXadrez pecaCapturada = partida.MoverPeca(origem, destino);
 				if (pecaCapturada != null) {
 					capturadas.add(pecaCapturada);
+				
+				if (partida.getPromocao() != null) {
+					System.out.println("Informe para qual peça o peão deve ser promovido (T/C/B/D): ");
+					String tipo = sc.nextLine();
+					partida.substituirPecaPromovida(tipo);
+				}
+				
 				}
 			} catch (ExcecoesDoXadrez e) {
 				System.out.println(e.getMessage());
